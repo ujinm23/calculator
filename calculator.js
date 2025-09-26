@@ -67,10 +67,17 @@ for (let i = 0; i < buttons.length; i++) {
       }
 
       console.log(result.innerHTML);
+    } else if (buttons[i] === "+/-") {
+      if (result.innerHTML.startsWith("-")) {
+        result.innerHTML = result.innerHTML.slice(1);
+      } else if (result.innerHTML.length > 0) {
+        result.innerHTML = "-" + result.innerHTML;
+      }
     } else {
       result.innerHTML += buttons[i];
     }
   }
+
   button.onclick = handleclick;
 }
 result.classList.add("doto");
